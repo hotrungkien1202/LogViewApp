@@ -1,0 +1,859 @@
+stash@{0}: WIP on staging: f236fe3 update
+
+[1mdiff --git a/package-lock.json b/package-lock.json[m
+[1mindex 6e1df98..e04bb37 100644[m
+[1m--- a/package-lock.json[m
+[1m+++ b/package-lock.json[m
+[36m@@ -546,14 +546,12 @@[m
+             "minimist": {[m
+               "version": "0.0.8",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "minipass": {[m
+               "version": "2.3.5",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "safe-buffer": "^5.1.2",[m
+                 "yallist": "^3.0.0"[m
+[36m@@ -572,7 +570,6 @@[m
+               "version": "0.5.1",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "minimist": "0.0.8"[m
+               }[m
+[36m@@ -6616,8 +6613,7 @@[m
+             "ansi-regex": {[m
+               "version": "2.1.1",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "aproba": {[m
+               "version": "1.2.0",[m
+[36m@@ -6660,8 +6656,7 @@[m
+             "code-point-at": {[m
+               "version": "1.1.0",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "concat-map": {[m
+               "version": "0.0.1",[m
+[36m@@ -6672,8 +6667,7 @@[m
+             "console-control-strings": {[m
+               "version": "1.1.0",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "core-util-is": {[m
+               "version": "1.0.2",[m
+[36m@@ -6790,8 +6784,7 @@[m
+             "inherits": {[m
+               "version": "2.0.3",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "ini": {[m
+               "version": "1.3.5",[m
+[36m@@ -6803,7 +6796,6 @@[m
+               "version": "1.0.0",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "number-is-nan": "^1.0.0"[m
+               }[m
+[36m@@ -6833,7 +6825,6 @@[m
+               "version": "2.3.5",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "safe-buffer": "^5.1.2",[m
+                 "yallist": "^3.0.0"[m
+[36m@@ -6852,7 +6843,6 @@[m
+               "version": "0.5.1",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "minimist": "0.0.8"[m
+               }[m
+[36m@@ -6933,8 +6923,7 @@[m
+             "number-is-nan": {[m
+               "version": "1.0.1",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "object-assign": {[m
+               "version": "4.1.1",[m
+[36m@@ -6946,7 +6935,6 @@[m
+               "version": "1.4.0",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "wrappy": "1"[m
+               }[m
+[36m@@ -7032,8 +7020,7 @@[m
+             "safe-buffer": {[m
+               "version": "5.1.2",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "safer-buffer": {[m
+               "version": "2.1.2",[m
+[36m@@ -7069,7 +7056,6 @@[m
+               "version": "1.0.2",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "code-point-at": "^1.0.0",[m
+                 "is-fullwidth-code-point": "^1.0.0",[m
+[36m@@ -7089,7 +7075,6 @@[m
+               "version": "3.0.1",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "ansi-regex": "^2.0.0"[m
+               }[m
+[36m@@ -7133,14 +7118,12 @@[m
+             "wrappy": {[m
+               "version": "1.0.2",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "yallist": {[m
+               "version": "3.0.3",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             }[m
+           }[m
+         },[m
+[36m@@ -12205,8 +12188,7 @@[m
+             "ansi-regex": {[m
+               "version": "2.1.1",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "aproba": {[m
+               "version": "1.2.0",[m
+[36m@@ -12249,8 +12231,7 @@[m
+             "code-point-at": {[m
+               "version": "1.1.0",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "concat-map": {[m
+               "version": "0.0.1",[m
+[36m@@ -12261,8 +12242,7 @@[m
+             "console-control-strings": {[m
+               "version": "1.1.0",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "core-util-is": {[m
+               "version": "1.0.2",[m
+[36m@@ -12379,8 +12359,7 @@[m
+             "inherits": {[m
+               "version": "2.0.3",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "ini": {[m
+               "version": "1.3.5",[m
+[36m@@ -12392,7 +12371,6 @@[m
+               "version": "1.0.0",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "number-is-nan": "^1.0.0"[m
+               }[m
+[36m@@ -12407,7 +12385,6 @@[m
+               "version": "3.0.4",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "brace-expansion": "^1.1.7"[m
+               }[m
+[36m@@ -12415,14 +12392,12 @@[m
+             "minimist": {[m
+               "version": "0.0.8",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "minipass": {[m
+               "version": "2.3.5",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "safe-buffer": "^5.1.2",[m
+                 "yallist": "^3.0.0"[m
+[36m@@ -12441,7 +12416,6 @@[m
+               "version": "0.5.1",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "minimist": "0.0.8"[m
+               }[m
+[36m@@ -12522,8 +12496,7 @@[m
+             "number-is-nan": {[m
+               "version": "1.0.1",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "object-assign": {[m
+               "version": "4.1.1",[m
+[36m@@ -12535,7 +12508,6 @@[m
+               "version": "1.4.0",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "wrappy": "1"[m
+               }[m
+[36m@@ -12621,8 +12593,7 @@[m
+             "safe-buffer": {[m
+               "version": "5.1.2",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "safer-buffer": {[m
+               "version": "2.1.2",[m
+[36m@@ -12658,7 +12629,6 @@[m
+               "version": "1.0.2",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "code-point-at": "^1.0.0",[m
+                 "is-fullwidth-code-point": "^1.0.0",[m
+[36m@@ -12678,7 +12648,6 @@[m
+               "version": "3.0.1",[m
+               "bundled": true,[m
+               "dev": true,[m
+[31m-              "optional": true,[m
+               "requires": {[m
+                 "ansi-regex": "^2.0.0"[m
+               }[m
+[36m@@ -12722,14 +12691,12 @@[m
+             "wrappy": {[m
+               "version": "1.0.2",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             },[m
+             "yallist": {[m
+               "version": "3.0.3",[m
+               "bundled": true,[m
+[31m-              "dev": true,[m
+[31m-              "optional": true[m
+[32m+[m[32m              "dev": true[m
+             }[m
+           }[m
+         },[m
+[1mdiff --git a/src/app/home/home.component.css b/src/app/home/home.component.css[m
+[1mindex 9ca93b3..ec39e18 100644[m
+[1m--- a/src/app/home/home.component.css[m
+[1m+++ b/src/app/home/home.component.css[m
+[36m@@ -65,7 +65,7 @@[m
+ [m
+ /* CSS for display ca vu stype */[m
+ .request {[m
+[31m-    margin-top:20px;[m
+[32m+[m[32m    margin-top:13px;[m
+     padding: 5px;[m
+     vertical-align: middle;[m
+ } [m
+[36m@@ -84,9 +84,36 @@[m
+ [m
+ /* KienHT */[m
+ .bg-custom{[m
+[31m-    background-color: #e9ecef;[m
+[32m+[m[32m    background-color: #FAFAFA;[m
+ }[m
+ [m
+ .custom-progress{[m
+[31m-    margin-top: 20px;[m
+[32m+[m[32m    margin-bottom: 10px;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.progress-shadow {[m
+[32m+[m[32m    box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;[m[41m    [m
+[32m+[m[32m    background-color: #FAFAFA;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.no-ui {[m
+[32m+[m[32m    border:0px solid;[m
+[32m+[m[32m    background: none;[m
+[32m+[m[32m    color: #999999;[m
+[32m+[m[32m    font-size: xx-small;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-custom {[m
+[32m+[m[32m    background: #4286CA;[m
+[32m+[m[32m    box-sizing: border-box;[m
+[32m+[m[32m    border-radius: 2px;[m
+[32m+[m[32m    border: 0px solid #4286CA;[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.btn-custom:hover {[m
+[32m+[m[32m    background: #3473B2[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m.custom-progress-bar {[m
+[32m+[m[32m    background-color: #0AB6EE;[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/src/app/home/home.component.html b/src/app/home/home.component.html[m
+[1mindex c6f2c9d..713f27b 100644[m
+[1m--- a/src/app/home/home.component.html[m
+[1m+++ b/src/app/home/home.component.html[m
+[36m@@ -38,15 +38,11 @@[m
+ [m
+             </div>[m
+             <div class="col-md-1">[m
+[31m-                <button class="btn btn-primary" (click)="getFetchDataButtonClick()">[m
+[31m-                    <span>Fetch Data</span>[m
+[31m-                </button>[m
+[31m-            </div>[m
+[31m-            <div class="col-md-4">[m
+[31m-                <button class="btn btn-primary float-right">[m
+[31m-                    <span>Sync</span>[m
+[32m+[m[32m                <button class="btn btn-primary btn-custom" (click)="getFetchDataButtonClick()">[m
+[32m+[m[32m                    <i class="fas fa-eye"></i>&nbsp;<span>Fetch Data</span>[m
+                 </button>[m
+             </div>[m
+[32m+[m[32m            <div class="col-md-4"></div>[m
+         </div>[m
+         <nav>[m
+             <div class="nav nav-tabs" id="nav-tab" role="tablist">[m
+[36m@@ -89,6 +85,7 @@[m
+                     <tbody>[m
+                         <tr *ngFor="let log of logFileContent">[m
+                             <td class="text-left">[m
+[32m+[m[32m                                <!-- tooltip of employee details -->[m
+                                 <ng-template #tipContent>[m
+                                     <div class="text-left clear-padding-inside">[m
+                                         <p><small>Emp ID: {{log.emp_id}}</small></p>[m
+[36m@@ -100,10 +97,10 @@[m
+                                         <p><small>Assigned: {{log.emp_assigned}}</small></p>[m
+                                     </div>[m
+                                 </ng-template>[m
+[31m-[m
+[32m+[m[32m                                <!-- employee -->[m
+                                 <button type="button" class="btn btn-outline-info btn-sm" [ngbTooltip]="tipContent"[m
+[31m-                                    placement="right" *ngIf = "log.emp_id">[m
+[31m-                                    {{log.emp_id}} <span class="badge badge-warning">LV: {{log.emp_level}}</span>[m
+[32m+[m[32m                                    placement="right" *ngIf="log.emp_id">[m
+[32m+[m[32m                                    {{log.emp_id}} <span class="badge badge-warning">LV{{log.emp_level}}</span>[m
+                                 </button>[m
+                             </td>[m
+                             <td class="text-center">0</td>[m
+[36m@@ -115,8 +112,13 @@[m
+                             <td class="text-center">4</td>[m
+                             <td class="text-center">4</td>[m
+                             <td class="text-center">0</td>[m
+[31m-                            <td>[m
+[32m+[m[32m                            <td class="text-center" style="vertical-align: top; text-align:center">[m
+[32m+[m
+[32m+[m[32m                                <div *ngIf="log.emp_available" class="request">[m
+[32m+[m[32m                                    &nbsp;</div>[m
+[32m+[m
+                                 <div *ngFor="let task of log.tasks">[m
+[32m+[m[32m                                    <!-- tooltip of task -->[m
+                                     <ng-template #tipContentTask>[m
+                                         <div class="text-left clear-padding-inside">[m
+                                             <p><small>Request ID: {{task.request_id}}</small></p>[m
+[36m@@ -130,47 +132,112 @@[m
+                                             <p><small>Vip2: {{task.customer_level}}</small></p>[m
+                                         </div>[m
+                                     </ng-template>[m
+[32m+[m[32m                                    <!-- task -->[m
+                                     <div class="request tk-task valid-for-ktv not-assigned-task"[m
+[31m-                                        [ngbTooltip]="tipContentTask" [ngStyle]="getStyleForTask(log.emp_id, task.task_type, task.sub_type)">[m
+[32m+[m[32m                                        [ngbTooltip]="tipContentTask"[m
+[32m+[m[32m                                        [ngStyle]="getStyleForTask(log.emp_id, task.task_type, task.sub_type)">[m
+                                         {{task.request_id}}[m
+[31m-                                        <span class="badge badge-pill badge-warning-task">VIP:{{task.customer_level}}</span>[m
+[32m+[m[32m                                        <span[m
+[32m+[m[32m                                            class="badge badge-pill badge-warning-task">VIP{{task.customer_level}}</span>[m
+                                     </div>[m
+                                 </div>[m
+ [m
+                             </td>[m
+[31m-                            <td colspan="6" class="text-left">[m
+[31m-                                <div>[m
+[31m-                                    <!-- <span>07:00</span> -->[m
+[32m+[m[32m                            <td colspan="6" class="text-left" style="vertical-align: top; text-align:center">[m
+[32m+[m[32m                                <!-- common progress bar display timeline -->[m
+[32m+[m[32m                                <div *ngIf="log.emp_available" class="small progress no-ui">[m
+[32m+[m[32m                                    <div>07:00</div>[m
+[32m+[m[32m                                    <div *ngFor="let item of items;" class="progress-bar no-ui" style="width:1%"[m
+[32m+[m[32m                                        role="progressbar" aria-valuemin="1" attr.aria-valuenow="{{item}}"[m
+[32m+[m[32m                                        aria-valuemax="99">[m
+[32m+[m[32m                                        <span[m
+[32m+[m[32m                                            *ngIf="do_display_text_time(item, get_available_time_segments(log.emp_available)[0])">{{getAvailableTime(log.emp_available)[0]}}</span>[m
+[32m+[m[32m                                        <span[m
+[32m+[m[32m                                            *ngIf="do_display_text_time(item, get_available_time_segments(log.emp_available)[1])">{{getAvailableTime(log.emp_available)[1]}}</span>[m
+[32m+[m[32m                                    </div>[m
+[32m+[m[32m                                    <div>21:00</div>[m
+                                 </div>[m
+[31m-                                <div class="progress border" *ngIf = "log.emp_available">[m
+ [m
+[31m-                                    <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10"[m
+[31m-                                        aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%':getAvailableProgress(log)[0]}">[m
+[32m+[m[32m                                <div style="margin: 0px 10px 0px 10px">[m
+[32m+[m[32m                                    <div class="progress border progress-shadow" *ngIf="log.emp_available">[m
+[32m+[m[32m                                        <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10"[m
+[32m+[m[32m                                            aria-valuemin="0" aria-valuemax="100"[m
+[32m+[m[32m                                            [ngStyle]="{'width.%':getAvailableProgress(log)[0]}">[m
+[32m+[m[32m                                        </div>[m
+[32m+[m[32m                                        <div class="progress-bar custom-progress-bar" role="progressbar"[m
+[32m+[m[32m                                            aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"[m
+[32m+[m[32m                                            [ngStyle]="{'width.%':getAvailableProgress(log)[1]}"></div>[m
+                                     </div>[m
+[31m-                                    <div class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0"[m
+[31m-                                        aria-valuemax="100" [ngStyle]="{'width.%':getAvailableProgress(log)[1]}"></div>[m
+                                 </div>[m
+[32m+[m
+[32m+[m[32m                                <!-- progress bar of task-->[m
+                                 <div *ngFor="let task of log.tasks">[m
+[31m-                                    <div class="progress border custom-progress">[m
+[31m-                                        <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10"[m
+[31m-                                            aria-valuemin="0" aria-valuemax="100"[m
+[31m-                                            [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[0]}"></div>[m
+[31m-                                        <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="10"[m
+[31m-                                            aria-valuemin="0" aria-valuemax="100"[m
+[31m-                                            [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[1]}">[m
+[32m+[m[32m                                    <div class="small progress no-ui" style="margin: 10px 10px 0 10px;">[m
+[32m+[m[32m                                        <div *ngFor="let item of items;" class="progress-bar no-ui" style="width:1%"[m
+[32m+[m[32m                                            role="progressbar" aria-valuemin="0" attr.aria-valuenow="{{item}}"[m
+[32m+[m[32m                                            aria-valuemax="100">[m
+[32m+[m[32m                                            <span[m
+[32m+[m[32m                                                *ngIf="do_display_text_time(item, getRedProgress(task.checkin_time, task.checkout_time)[0])">[m
+[32m+[m[32m                                                {{task.checkin_time | slice:10:16 }}[m
+[32m+[m[32m                                            </span>[m
+[32m+[m[32m                                            <span[m
+[32m+[m[32m                                                *ngIf="do_display_text_time(item, getRedProgress(task.checkin_time, task.checkout_time)[0] + getRedProgress(task.checkin_time, task.checkout_time)[1])">[m
+[32m+[m[32m                                                {{task.checkout_time | slice:10:16 }}[m
+[32m+[m[32m                                            </span>[m
+[32m+[m[32m                                        </div>[m
+[32m+[m[32m                                    </div>[m
+[32m+[m[32m                                    <div style="margin: 0px 10px 0px 10px">[m
+[32m+[m[32m                                        <div class="progress border custom-progress progress-shadow">[m
+[32m+[m[32m                                            <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10"[m
+[32m+[m[32m                                                aria-valuemin="0" aria-valuemax="100"[m
+[32m+[m[32m                                                [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[0]}">[m
+[32m+[m[32m                                            </div>[m
+[32m+[m[32m                                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="10"[m
+[32m+[m[32m                                                aria-valuemin="0" aria-valuemax="100"[m
+[32m+[m[32m                                                [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[1]}">[m
+[32m+[m[32m                                            </div>[m
+                                         </div>[m
+                                     </div>[m
+                                 </div>[m
+[32m+[m
+                             </td>[m
+                         </tr>[m
+                     </tbody>[m
+                 </table>[m
+             </div>[m
+             <div class="tab-pane fade" id="nav-glpk" role="tabpanel" aria-labelledby="nav-glpk-tab">[m
+[31m-                <button type="button" class="btn btn-outline-secondary mr-2" placement="right"[m
+[31m-                    ngbTooltip="Tooltip on right">[m
+[31m-                    Tooltip on right[m
+[31m-                </button>[m
+[32m+[m[32m                <table class="table table-striped" style="margin-top: 20px">[m
+[32m+[m[32m                    <thead>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <th rowspan="2">Nhân sự</th>[m
+[32m+[m[32m                            <th colspan="3">Chưa phân công</th>[m
+[32m+[m[32m                            <th colspan="3">Tổng ca được phân công</th>[m
+[32m+[m[32m                            <th colspan="3">Tổng ca phân công tạm</th>[m
+[32m+[m[32m                            <th rowspan="2">Ca vụ</th>[m
+[32m+[m[32m                            <th colspan="6">Thời gian</th>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                        <tr>[m
+[32m+[m[32m                            <th>Triển khai</th>[m
+[32m+[m[32m                            <th>Bảo trì</th>[m
+[32m+[m[32m                            <th>Tổng</th>[m
+[32m+[m[32m                            <th>Triển khai</th>[m
+[32m+[m[32m                            <th>Bảo trì</th>[m
+[32m+[m[32m                            <th>Tổng</th>[m
+[32m+[m[32m                            <th>Triển khai</th>[m
+[32m+[m[32m                            <th>Bảo trì</th>[m
+[32m+[m[32m                            <th>Tổng</th>[m
+[32m+[m[32m                            <th>08:00-10:00</th>[m
+[32m+[m[32m                            <th>10:00-12:00</th>[m
+[32m+[m[32m                            <th>13:00-15:00</th>[m
+[32m+[m[32m                            <th>15:00-17:00</th>[m
+[32m+[m[32m                            <th>17:00-19:00</th>[m
+[32m+[m[32m                            <th>19:00-21:00</th>[m
+[32m+[m[32m                        </tr>[m
+[32m+[m[32m                    </thead>[m
+[32m+[m[32m                </table>[m
+[32m+[m[32m                <div class="alert alert-warning" role="alert">[m
+[32m+[m[32m                    Không áp dụng![m
+[32m+[m[32m                </div>[m
+             </div>[m
+         </div>[m
+     </div>[m
+[1mdiff --git a/src/app/home/home.component.ts b/src/app/home/home.component.ts[m
+[1mindex eb5233d..4a210cc 100644[m
+[1m--- a/src/app/home/home.component.ts[m
+[1m+++ b/src/app/home/home.component.ts[m
+[36m@@ -3,7 +3,8 @@[m [mimport { formatDate } from '@angular/common';[m
+ import { LogfileService } from '../services/logfile.service';[m
+ import { Logfile } from '../models/logfile.model';[m
+ import { Progress } from '../models/progress.model'[m
+[31m-export interface Food{[m
+[32m+[m[32mimport { toInteger } from '@ng-bootstrap/ng-bootstrap/util/util';[m
+[32m+[m[32mexport interface Food {[m
+   value: string;[m
+   display: string;[m
+ }[m
+[36m@@ -13,9 +14,10 @@[m [mexport interface Food{[m
+   templateUrl: './home.component.html',[m
+   styleUrls: ['./home.component.css'][m
+ })[m
+[32m+[m
+ export class HomeComponent implements OnInit {[m
+   EMP_NAME = ['NVKT', 'KTV'];[m
+[31m-  TASK_NAME = ['Bao tri vat ly', 'Bao tri logic', 'Trien khai co keo cap', 'Trien khai khong keo cap'] [m
+[32m+[m[32m  TASK_NAME = ['Bao tri vat ly', 'Bao tri logic', 'Trien khai co keo cap', 'Trien khai khong keo cap'][m
+   folders = [];[m
+   times = ['08:00 - 09:00', '09:00 - 10:00', '10:00 - 11:00', '11:00 - 12:00', '12:00 - 13:00', '13:00 - 14:00', '14:00 - 15:00', '15:00 - 16:00', '16:00 - 17:00', '17:00 - 18:00'][m
+   folder: any;[m
+[36m@@ -23,104 +25,211 @@[m [mexport class HomeComponent implements OnInit {[m
+   file: any;[m
+   logfiles: any = [];[m
+   logFileContent: Logfile[] = [];[m
+[31m-[m
+[32m+[m[32m  items: number[] = [];[m
+ [m
+   constructor(private logService: LogfileService) {[m
+[31m-    [m
+[32m+[m
+   }[m
+ [m
+   ngOnInit() {[m
+     this.setDefaultValue();[m
+ [m
+[31m-    this.logService.getFolderNames().subscribe(response =>{[m
+[32m+[m[32m    this.logService.getFolderNames().subscribe(response => {[m
+       this.folders = response.body;[m
+     });[m
+     this.getLogFile();[m
+[32m+[m[32m    this.items = this.range(2, 99, 1);[m
+   }[m
+   // css function[m
+ [m
+[31m-  getStyleForTask(emp_id, task_type, sub_type){[m
+[32m+[m[32m  /**********************[m
+[32m+[m[32m  * To get one range of integer numbers[m
+[32m+[m[32m  **********************/[m
+[32m+[m[32m  range(start, stop, step) {[m
+[32m+[m[32m    let a = [start], b = start;[m
+[32m+[m[32m    while (b < stop) {[m
+[32m+[m[32m      a.push(b += step || 1);[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return a;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m  // convert minutes to format(HH:mm)[m
+[32m+[m[32m  parseMinuteToTime(minutes: number) {[m
+[32m+[m[32m    let h = minutes / 60;[m
+[32m+[m[32m    h = Math.floor(h);[m
+[32m+[m[32m    let m = minutes - (h * 60)[m
+[32m+[m[32m    let hh = h.toString().padStart(2, "0");[m
+[32m+[m[32m    let mm = m.toString().padStart(2, "0");[m
+[32m+[m[32m    return hh + ":" + mm;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /*********[m
+[32m+[m[32m   * To build task time segments, ipnut str full datetime (Y-M-D hh:mi:ss)[m
+[32m+[m[32m   * ******** */[m
+[32m+[m[32m  get_task_time_segments(task_time_str) {[m
+[32m+[m[32m    let tmp_str = task_time_str.trim().split(' ')[m
+[32m+[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /**********************[m
+[32m+[m[32m  * To build time segments[m
+[32m+[m[32m  **********************/[m
+[32m+[m[32m  get_available_time_segments(available_time_str) {[m
+[32m+[m[32m    let minTime = 7 * 60; // start time of day 0%[m
+[32m+[m[32m    let maxTime = 21 * 60; // end time of day 100%[m
+[32m+[m[32m    let list_time = available_time_str.trim().split(",");[m
+[32m+[m[32m    let emp_start_time = minTime;[m
+[32m+[m[32m    let emp_end_time = maxTime;[m
+[32m+[m[32m    //console.log("================================== : " + available_time_str)[m
+[32m+[m[32m    for (let i in list_time) {[m
+[32m+[m[32m      let firstTime = list_time[i].trim().split("-")[0];[m
+[32m+[m[32m      let secondTime = list_time[i].trim().split("-")[1];[m
+[32m+[m[32m      //console.log("firstTime: " + this.parseHourToMinute(firstTime))[m
+[32m+[m[32m      //console.log("secondTime: " + this.parseHourToMinute(secondTime))[m
+[32m+[m[32m      if (this.parseHourToMinute(firstTime) < emp_end_time) {[m
+[32m+[m[32m        emp_end_time = this.parseHourToMinute(firstTime);[m
+[32m+[m[32m      }[m
+[32m+[m[32m      if (this.parseHourToMinute(secondTime) > emp_start_time) {[m
+[32m+[m[32m        emp_start_time = this.parseHourToMinute(secondTime);[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m    let l: Array<number> = [];[m
+[32m+[m[32m    //console.log("emp_start_time: " + emp_start_time)[m
+[32m+[m[32m    //console.log("emp_end_time: " + emp_end_time)[m
+[32m+[m
+[32m+[m[32m    // convert to percent[m
+[32m+[m[32m    let start_percent = ((emp_start_time - minTime) / (maxTime - minTime)) * 100; // percent from 0 to startTime[m
+[32m+[m[32m    start_percent = Math.floor(start_percent)[m
+[32m+[m[32m    //console.log("start_percent: " + start_percent)[m
+[32m+[m
+[32m+[m[32m    let end_percent = start_percent + ((emp_end_time - emp_start_time) / (maxTime - minTime)) * 100 // percent from 0 to startTime + percent from startTime to endTime[m
+[32m+[m[32m    end_percent = Math.ceil(end_percent)[m
+[32m+[m[32m    //console.log("end_percent: " + end_percent)[m
+[32m+[m[32m    l.push(start_percent); // start time[m
+[32m+[m[32m    l.push(end_percent) // end time[m
+[32m+[m[32m    return l;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /********[m
+[32m+[m[32m   * to get available time[m
+[32m+[m[32m   */[m
+[32m+[m[32m  getAvailableTime(available_time_str) {[m
+[32m+[m[32m    let minTime = 7 * 60; // start time of day 0%[m
+[32m+[m[32m    let maxTime = 21 * 60; // end time of day 100%[m
+[32m+[m[32m    let list_time = available_time_str.trim().split(",");[m
+[32m+[m[32m    let emp_start_time = minTime;[m
+[32m+[m[32m    let emp_end_time = maxTime;[m
+[32m+[m[32m    //console.log("================================== : " + available_time_str)[m
+[32m+[m[32m    for (let i in list_time) {[m
+[32m+[m[32m      let firstTime = list_time[i].trim().split("-")[0];[m
+[32m+[m[32m      let secondTime = list_time[i].trim().split("-")[1];[m
+[32m+[m[32m      if (this.parseHourToMinute(firstTime) < emp_end_time) {[m
+[32m+[m[32m        emp_end_time = this.parseHourToMinute(firstTime);[m
+[32m+[m[32m      }[m
+[32m+[m[32m      if (this.parseHourToMinute(secondTime) > emp_start_time) {[m
+[32m+[m[32m        emp_start_time = this.parseHourToMinute(secondTime);[m
+[32m+[m[32m      }[m
+[32m+[m[32m    }[m
+[32m+[m[32m    let l: Array<string> = [];[m
+[32m+[m[32m    l.push(this.parseMinuteToTime(emp_start_time)); // start time[m
+[32m+[m[32m    l.push(this.parseMinuteToTime(emp_end_time)) // end time[m
+[32m+[m[32m    return l;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  /*****************[m
+[32m+[m[32m   * To test display text in timeline or not[m
+[32m+[m[32m   *****************/[m
+[32m+[m[32m  do_display_text_time(item, val) {[m
+[32m+[m[32m    val = Math.round(val)[m
+[32m+[m[32m    if (item == val) {[m
+[32m+[m[32m      return true;[m
+[32m+[m[32m    }[m
+[32m+[m[32m    return false;[m
+[32m+[m[32m  }[m
+[32m+[m
+[32m+[m[32m  getStyleForTask(emp_id, task_type, sub_type) {[m
+     let style = {[m
+[31m-      'background-color':task_type == 1 ? '#28a745' : '#ffc107',[m
+[31m-      'border-left':emp_id == '' ? '5px solid red' : '',[m
+[31m-      'border-right':sub_type == '2' ? '5px solid black' : ''[m
+[32m+[m[32m      'background-color': task_type == 1 ? '#28a745' : '#ffc107',[m
+[32m+[m[32m      'border-left': emp_id == '' ? '5px solid red' : '',[m
+[32m+[m[32m      'border-right': sub_type == '2' ? '5px solid black' : ''[m
+     };[m
+     return style;[m
+   }[m
+   // get all log file name by folder and time now in combobox[m
+[31m-  getLogFile(){[m
+[31m-    let varTime = this.time.split("-",2)[0].split(":")[0];[m
+[32m+[m[32m  getLogFile() {[m
+[32m+[m[32m    let varTime = this.time.split("-", 2)[0].split(":")[0];[m
+     console.log(varTime);[m
+[31m-    this.logService.getFileNamesByFolder(this.folder,varTime).subscribe(response =>{[m
+[32m+[m[32m    this.logService.getFileNamesByFolder(this.folder, varTime).subscribe(response => {[m
+       this.logfiles = response.body;[m
+       this.file = this.logfiles[0];[m
+[31m-      console.log("pass" +  this.file)[m
+[32m+[m[32m      console.log("pass" + this.file)[m
+     });[m
+   }[m
+ [m
+   // set value for combobox when refresh website[m
+[31m-  setDefaultValue(){[m
+[32m+[m[32m  setDefaultValue() {[m
+     let now = new Date();[m
+     this.folder = formatDate(now.toString(), "yyyyMMdd", "en");[m
+     let timeStart = now.getHours();[m
+[31m-    if(timeStart >= 10){[m
+[31m-      this.time = timeStart + ":00 - " + (timeStart+1) + ":00";[m
+[32m+[m[32m    if (timeStart >= 10) {[m
+[32m+[m[32m      this.time = timeStart + ":00 - " + (timeStart + 1) + ":00";[m
+     }[m
+[31m-    else{[m
+[31m-      if(timeStart == 9){[m
+[31m-        this.time = "0" + timeStart + ":00 - " + (timeStart+1) + ":00";[m
+[32m+[m[32m    else {[m
+[32m+[m[32m      if (timeStart == 9) {[m
+[32m+[m[32m        this.time = "0" + timeStart + ":00 - " + (timeStart + 1) + ":00";[m
+       }[m
+[31m-      else{[m
+[31m-        this.time = "0" + timeStart + ":00 - 0" + (timeStart+1) + ":00";[m
+[32m+[m[32m      else {[m
+[32m+[m[32m        this.time = "0" + timeStart + ":00 - 0" + (timeStart + 1) + ":00";[m
+       }[m
+[31m-      [m
+[32m+[m
+     }[m
+   }[m
+ [m
+   // action when change folder combobox[m
+[31m-  changeFolder(val : any){[m
+[32m+[m[32m  changeFolder(val: any) {[m
+     this.folder = val;[m
+     this.getLogFile();[m
+   }[m
+ [m
+   // get action when change time combobox[m
+[31m-  changeTime(val: any){[m
+[32m+[m[32m  changeTime(val: any) {[m
+     this.time = val;[m
+     this.getLogFile();[m
+   }[m
+ [m
+   // get action when change file combobox[m
+[31m-  changeFile(val: any){[m
+[32m+[m[32m  changeFile(val: any) {[m
+     this.file = val;[m
+   }[m
+ [m
+   // get action when click fetch data button[m
+[31m-  getFetchDataButtonClick(){[m
+[32m+[m[32m  getFetchDataButtonClick() {[m
+     this.logService.getContentLogFile(this.folder, this.file).subscribe(response => {[m
+       this.logFileContent = response.body;[m
+       console.log("log 1", this.logFileContent[0])[m
+       console.log("log file ", this.getAvailableProgress(this.logFileContent[0]));[m
+     });[m
+[31m-    [m
+[32m+[m
+   }[m
+ [m
+   // convert time from format(HH:mm:ss) to number of minutes[m
+[31m-  parseHourToMinute(hours: string){[m
+[31m-    if(hours.includes(":")){[m
+[32m+[m[32m  parseHourToMinute(hours: string) {[m
+[32m+[m[32m    if (hours.includes(":")) {[m
+       let timeHour = hours.trim().split(":")[0];[m
+       let timeMin = hours.trim().split(":")[1];[m
+[31m-      return (parseInt(timeHour)*60 + parseInt(timeMin));[m
+[32m+[m[32m      return (parseInt(timeHour) * 60 + parseInt(timeMin));[m
+     }[m
+     return 0;[m
+   }[m
+ [m
+[31m-  getTimePerDay(startTime: number, endTime: number){[m
+[32m+[m[32m  getTimePerDay(startTime: number, endTime: number) {[m
+     let totalTime = (endTime - startTime);[m
+[31m-    return (totalTime/(14*60))*100;[m
+[32m+[m[32m    return (totalTime / (14 * 60)) * 100;[m
+   }[m
+ [m
+[31m-  getRedProgress(checkinTime: string, checkoutTime: string){[m
+[31m-    let minTime = 7*60;[m
+[32m+[m[32m  getRedProgress(checkinTime: string, checkoutTime: string) {[m
+[32m+[m[32m    let minTime = 7 * 60;[m
+     let time_checkin = checkinTime.trim().split(" ")[1];[m
+     let time_checkout = checkoutTime.trim().split(" ")[1];[m
+     let ll: Array<number> = [][m
+[36m@@ -128,19 +237,19 @@[m [mexport class HomeComponent implements OnInit {[m
+     ll.push(this.getTimePerDay(this.parseHourToMinute(time_checkin), this.parseHourToMinute(time_checkout)))[m
+     return ll;[m
+   }[m
+[31m-  [m
+[31m-  getAvailableProgress(log: Logfile){[m
+[31m-    let minTime = 21*60;[m
+[31m-    let maxTime = 7*60;[m
+[32m+[m
+[32m+[m[32m  getAvailableProgress(log: Logfile) {[m
+[32m+[m[32m    let minTime = 21 * 60;[m
+[32m+[m[32m    let maxTime = 7 * 60;[m
+     let available_time = log.emp_available;[m
+     let list_time = available_time.trim().split(",");[m
+[31m-    for(let i in list_time){[m
+[32m+[m[32m    for (let i in list_time) {[m
+       let firstTime = list_time[i].trim().split("-")[0];[m
+       let secondTime = list_time[i].trim().split("-")[1];[m
+[31m-      if(this.parseHourToMinute(firstTime) < minTime){[m
+[32m+[m[32m      if (this.parseHourToMinute(firstTime) < minTime) {[m
+         minTime = this.parseHourToMinute(firstTime);[m
+       }[m
+[31m-      if(this.parseHourToMinute(secondTime) > maxTime){[m
+[32m+[m[32m      if (this.parseHourToMinute(secondTime) > maxTime) {[m
+         maxTime = this.parseHourToMinute(secondTime);[m
+       }[m
+     }[m
+[36m@@ -149,4 +258,5 @@[m [mexport class HomeComponent implements OnInit {[m
+     l.push(this.getTimePerDay(minTime, maxTime))[m
+     return l;[m
+   }[m
+[32m+[m
+ }[m
+[1mdiff --git a/src/index.html b/src/index.html[m
+[1mindex 071bf7b..f5c3607 100644[m
+[1m--- a/src/index.html[m
+[1m+++ b/src/index.html[m
+[36m@@ -7,7 +7,7 @@[m
+   <base href="/">[m
+   <meta name="viewport" content="width=device-width, initial-scale=1">[m
+   <link rel="icon" type="image/x-icon" href="favicon.ico">[m
+[31m-[m
+[32m+[m[32m  <script src="https://kit.fontawesome.com/d8a4f66e30.js"></script>[m
+ </head>[m
+ [m
+ <body>[m

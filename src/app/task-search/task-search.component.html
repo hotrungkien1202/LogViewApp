@@ -1,0 +1,92 @@
+<div>
+    <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
+        <div class="jh-logo-container navbar-brand">
+            <a class="navbar-brand logo float-left" href="/home">
+                <span class="logo-img"></span>
+                <span class="navbar-title">PCTU-FTEL</span> <span class="navbar-version">FDX</span> </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li></li>
+            </ul>
+        </div>
+        <div class="mr-2">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li>
+                    <h6><a class="text-white" href="/home"><i class="fas fa-tasks"></i>&nbsp;View
+                            schedule</a>
+                    </h6>
+                </li>
+                <!-- <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/emp-search"><i class="fas fa-street-view"></i>&nbsp;Search
+                            emp</a>
+                    </h6>
+                </li> -->
+                <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/" (click)="logout()"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </h6>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<div>
+    <form class="needs-validation" novalidate>
+        <div class="main-content bg-white">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <h5>Search by Task</h5>
+                </div>
+            </div>
+            <div class="row">
+                <!-- <div class="spinner-border" role="status" *ngIf="logResponse == null" style="margin: auto;">
+                    <span class="sr-only" style="text-align: center; font-size: 15px;">Loading...</span>
+                </div> -->
+                <div class="col-12 mt-2">
+
+                    <!-- emp box -->
+                    <div class="card text-left" *ngIf="searchFound == true">
+                        <div class="card-header">
+                            <b>Search result</b>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Information about Task: {{unique_id}}</h6>
+                            <div class="container-fruit">
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Task log: </div>
+                                    <div class="col-md-10">
+                                        <div *ngIf="logRespone.event_log?.length > 0">
+                                            <div class="row mt-2" *ngFor="let el of event_log">
+                                                <div class="col-md-2"><i class="fas fa-play"></i>&nbsp;&nbsp;[{{el.date}}]:
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <span>{{el.emp_id}}</span>
+                                                </div>
+                                                <div class="col-md-3" [ngStyle]="setStyleForText(el.event_code)">
+                                                    <p>{{EVENTNAME[el.event_code-1]}}</p>
+                                                </div>
+
+                                                <div class="col-md-*"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted"></div>
+                    </div>
+                    <!-- Not found box -->
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Log viewer</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://kit.fontawesome.com/d8a4f66e30.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAlqcCPWryDEOAemJM0GQXoJLr0OrBK1X8"></script>
+    <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap&key=Ar9O1p5BvPB6EHkZgfKyFgCBRd_uCm8yegyXiCpsi3pZJSFvG0je16Ccc4PGRdk-' async defer></script>
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Get the forms we want to add validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- NAV bar -->
+    <!-- <div>
+        <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
+            <div class="jh-logo-container navbar-brand">
+                <a class="navbar-brand logo float-left" href="/home">
+                    <span class="logo-img"></span>
+                    <span class="navbar-title">PCTD-FTEL</span> <span class="navbar-version">FDX</span> </a>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li></li>
+                </ul>
+            </div>
+            <div class="mr-2">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li>
+                        <h6><a class="text-white" href="/home"><i class="fas fa-tasks"></i>&nbsp;View
+                                schedule</a>
+                        </h6>
+                    </li>
+                    <li class="text-white">&nbsp;|&nbsp;</li>
+                    <li>
+                        <h6>
+                            <a class="text-white" href="/emp-search"><i class="fas fa-street-view"></i>&nbsp;Search
+                                emp</a>
+                        </h6>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div> -->
+    <div class="container-fluid ">
+        <app-root>
+            Loading....
+        </app-root>
+    </div>
+</body>
+
+</html>

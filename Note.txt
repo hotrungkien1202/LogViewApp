@@ -1,0 +1,43 @@
+0. node -v
+		v10.15.3
+   npm -v
+		6.4.1
+
+0. Install Angular CLI
+	npm install -g @angular/cli
+
+0. Integrate bootstrap
+	npm install bootstrap --save
+	npm install jquery --save
+	npm install popper.js --save
+
+1. Create new Angular APP
+	ng new logview-app
+	
+	cd logview-app
+	ng serve --open
+
+2. Create new component
+	ng generate component home
+
+
+
+
+3. Create service
+	ng generate service product-service
+
+
+5. Add Routing
+	ng generate module app-routing --module=app
+
+6. add bootstrap css
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/popper.js/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+	

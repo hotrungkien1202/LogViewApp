@@ -1,0 +1,6 @@
+node_modules/
+dist/
+dist/logview-app/3rdpartylicenses.txt
+dist/logview-app/index.html
+dist/logview-app/styles.2995aa2b7267953a1c95.css
+dist/logview-app/assets/js/custom.js

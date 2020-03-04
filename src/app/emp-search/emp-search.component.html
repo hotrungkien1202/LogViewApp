@@ -1,0 +1,242 @@
+<div>
+    <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
+        <div class="jh-logo-container navbar-brand">
+            <a class="navbar-brand logo float-left" href="/home">
+                <span class="logo-img"></span>
+                <span class="navbar-title">PCTU-FTEL</span> <span class="navbar-version">FDX</span> </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li></li>
+            </ul>
+        </div>
+        <div class="mr-2">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li>
+                    <h6><a class="text-white" href="/home"><i class="fas fa-tasks"></i>&nbsp;View
+                            schedule</a>
+                    </h6>
+                </li>
+                <!-- <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/emp-search"><i class="fas fa-street-view"></i>&nbsp;Search
+                            emp</a>
+                    </h6>
+                </li> -->
+                <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/" (click)="logout()"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </h6>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<div>
+    <form class="needs-validation" novalidate>
+        <div class="main-content bg-white">
+            <div class="row">
+                <div class="col-md-12 mb-2">
+                    <h5>Search by employee</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Folder</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search employee" [(ngModel)]="selectedFolder" name="selectedFolder" required>
+                        <div class="invalid-tooltip">
+                            Please select folder.
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" placeholder="Search employee" [(ngModel)]="inputedEmpId" name="inputedEmpId" required>
+                    <div class="invalid-tooltip">
+                        Please input valid username.
+                    </div>
+                </div>
+                <div class="col-md-8"></div>
+            </div>
+            <div class="row">
+                <div class="spinner-border" role="status" *ngIf="empResponse == null" style="margin: auto;">
+                    <span class="sr-only" style="text-align: center; font-size: 15px;">Loading...</span>
+                </div>
+                <div class="col-12 mt-2">
+
+                    <!-- emp box -->
+                    <div class="card text-left" *ngIf="searchFound == true">
+                        <div class="card-header">
+                            <b>Search result</b>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Information about employee: {{inputedEmpId}}</h6>
+                            <div class="container-fruit">
+                                <hr>
+                                <div class="row mb-2 mt-3">
+                                    <div class="col-md-2 text-bold">Emp ID: </div>
+                                    <div class="col-md-10 text-bold text-info">{{empResponse.emp_id}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp type: </div>
+                                    <div class="col-md-10">
+                                        {{empResponse.type}} -
+                                        <span *ngIf="empResponse.type == 1">Nhân viên kỹ thuật</span>
+                                        <span *ngIf="empResponse.type == 2">Kỹ thuật viên</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Block Name: </div>
+                                    <div class="col-md-10">{{empResponse.block_name}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Block ID: </div>
+                                    <div class="col-md-10">{{empResponse.block_id}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Res time: </div>
+                                    <div class="col-md-10">{{empResponse.res_time}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp available: </div>
+                                    <div class="col-md-10">{{empResponse.available}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp coordinate: </div>
+                                    <div class="col-md-10">{{empResponse.emp_coordinate}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp level: </div>
+                                    <div class="col-md-10">{{empResponse.emp_level}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp emp_status: </div>
+                                    <div class="col-md-10">
+                                        {{empResponse.emp_status}} -
+                                        <span *ngIf="empResponse.emp_status == 1">Hiện tại đang bận</span>
+                                        <span *ngIf="empResponse.emp_status == 0">Hiện tại đang rảnh</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp task: </div>
+                                    <div class="col-md-10" *ngIf="empResponse.emp_task">{{empResponse.emp_task}} (TKNET_TKBOX_BTVL_BTLOGIC_PERFOMANCE)</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Request impossible: </div>
+                                    <div class="col-md-10">{{empResponse.request_impossible}}</div>
+                                </div>
+                                <div class="row mb-2">
+                                    <div class="col-md-2 text-bold">Emp log: </div>
+                                    <div class="col-md-10">
+                                        <div *ngIf="empResponse.event_logs?.length > 0">
+                                            <div class="row mt-2" *ngFor="let el of empResponse.event_logs">
+                                                <div class="col-md-2"><i class="fas fa-play"></i>&nbsp;&nbsp;[{{el.event_date_time}}]:
+                                                </div>
+                                                <div class="col-md-1">
+                                                    <p *ngIf="el.event_code == '6'" [ngStyle]="setStyleDotted(el.event_code)">
+                                                        <b style="color: orange;">{{el.event_desc}}</b>
+                                                    </p>
+                                                    <p *ngIf="el.event_code == '3'">
+                                                        <b style="color:palevioletred;">{{el.event_desc}}</b>
+                                                    </p>
+
+                                                    <span *ngIf="el.event_code == '4'" style="color: orange;">
+                                                        {{el.event_desc}}
+                                                    </span>
+                                                    <span *ngIf="el.event_code != '6' && el.event_code != '4' && el.event_code != '3'">
+                                                        {{el.event_desc}}
+                                                    </span>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <a data-toggle="modal" data-target="#exampleModalCenter" href="#" (click)="getTaskInfo(selectedFolder,el.request.request_id,empResponse.log_file)">
+                                                        {{el.request.request_id}}
+                                                    </a> -
+                                                    <span>{{el.request.contract}}</span> (
+                                                    <span *ngIf="el.request.type == 1">
+                                                        Triển khai
+                                                    </span>
+                                                    <span *ngIf="el.request.type == 2">
+                                                        Bảo trì
+                                                    </span>)
+                                                </div>
+                                                <div class="col-md-*"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer text-muted"></div>
+                    </div>
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-centered" role="dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle" *ngIf="task != null">
+                                        {{task.request_id}}
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body" *ngIf="task != null">
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Request_id: </div>
+                                        <div class="col-md-10">{{task.request_id}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Reason out case: </div>
+                                        <div class="col-md-10">{{task.reason_out_case}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Appointmentdate: </div>
+                                        <div class="col-md-10">{{task.appointmentdate}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Manual priority: </div>
+                                        <div class="col-md-10">{{task.manual_priority}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Emp speciallized: </div>
+                                        <div class="col-md-10">{{task.emp_speciallized}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Sub type 1: </div>
+                                        <div class="col-md-10">{{task.sub_type_1}}</div>
+                                    </div>
+                                    <div class="row mb-2">
+                                        <div class="col-md-2 text-bold">Sub type 2: </div>
+                                        <div class="col-md-10">{{task.sub_type2_2}}</div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Not found box -->
+                    <div class="card text-left" *ngIf="searchFound == false">
+                        <div class="card-header text-bold">
+                            <b>Search result</b>
+                        </div>
+                        <div class="card-body">
+                            <h6 class="card-title">Not found any information about employee: {{inputedEmpId}}</h6>
+                            <p class="card-text">Please consider your search keyword.</p>
+                        </div>
+                        <div class="card-footer text-muted"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </form>
+
+</div>

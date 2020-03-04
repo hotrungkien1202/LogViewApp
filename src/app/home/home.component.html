@@ -1,0 +1,508 @@
+<div>
+    <nav class="navbar navbar-dark navbar-expand-md jh-navbar">
+        <div class="jh-logo-container navbar-brand">
+            <a class="navbar-brand logo float-left" href="/home">
+                <span class="logo-img"></span>
+                <span class="navbar-title">PCTU-FTEL</span> <span class="navbar-version">FDX</span> </a>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li></li>
+            </ul>
+        </div>
+        <div class="mr-2">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li>
+                    <h6><a class="text-white" href="/home"><i class="fas fa-tasks"></i>&nbsp;View
+                            schedule</a>
+                    </h6>
+                </li>
+                <!-- <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/emp-search"><i class="fas fa-street-view"></i>&nbsp;Search
+                            emp</a>
+                    </h6>
+                </li> -->
+                <li class="text-white">&nbsp;|&nbsp;</li>
+                <li>
+                    <h6>
+                        <a class="text-white" href="/" (click)="logout()"><i
+                                class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+                    </h6>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</div>
+<div>
+    <div class="main-content bg-white">
+        <div class="row">
+            <div class="col">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Folder</span>
+                    </div>
+                    <select name="folder" class="form-control ng-pristine ng-valid ng-touched" [(ngModel)]="folder" (ngModelChange)=changeFolder($event)>
+                        <option [ngValue]="folder" *ngFor="let folder of folders">{{folder}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Time</span>
+                    </div>
+                    <select name="Time" class="form-control ng-pristine ng-valid ng-touched" [(ngModel)]="time" (ngModelChange)=changeTime($event)>
+                        <option [ngValue]="time" *ngFor="let time of times">{{time}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="col">
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Block</span>
+                    </div>
+                    <select name="Block" class="form-control ng-pristine ng-valid ng-touched" [(ngModel)]="block" (ngModelChange)=changeBlock($event)>
+                        <option *ngFor="let b of blocks" [ngValue]="b">{{b.block_id}} - {{b.block_name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-1">
+                <button class="btn form-control btn-primary btn-custom" (click)="nextBlock()">
+                    <span>Next</span>
+                </button>
+            </div>
+            <div class="col">
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">File</span>
+                    </div>
+                    <select name="File" class="form-control ng-pristine ng-valid ng-touched" [(ngModel)]="file" (ngModelChange)=changeFile($event)>
+                        <option *ngFor="let f of logfiles" [ngValue]="f">{{f.file_name}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div class="col-1">
+                <input type="text" class="form-control ng-pristine ng-valid ng-touched float-right" placeholder="Search block" [(ngModel)]="block_id_search">
+            </div>
+            <div class="col-1">
+                <button class="btn form-control btn-primary btn-custom " (click)="searchBlock()">
+                    <span>Search</span>
+                </button>
+            </div>
+            <div class="popup" (click)="showTaskInfor()">
+                <span style="align-items: center;">
+                    <i class="fas fa-info-circle" style="font-size: 25px; padding-top: 5px;"></i>
+                </span>
+                <span class="popuptext" id="myPopup" *ngIf="block != null && file != null">
+                    <p class="text-info">Block: {{block.block_name}}</p>
+                    <p class="text-info">Load Factor: {{file.load_factor}}</p>
+                    <p class="text-info">Block Ability: {{block.block_block_ability}}</p>
+                    <p class="text-info">Distance: {{block.block_distance}}</p>
+                    <p class="text-info">Res_Time: {{file.res_time}}</p>
+                    <p class="text-info">Version: {{block.version}}</p>
+                    <p class="text-info">Latest Log: {{latesttime}}</p>
+                </span>
+            </div>
+        </div>
+        <div class="nav-content" style="margin-top: 20px">
+            <nav class="nav-name">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active text-bold" id="nav-hc-tab" data-toggle="tab" href="#nav-hc" role="tab" aria-controls="nav-hc" aria-selected="true">HC Algorithm</a>
+                    <a class="nav-item nav-link text-bold" id="nav-glpk-tab" data-toggle="tab" href="#nav-glpk" role="tab" aria-controls="nav-glpk" aria-selected="false" (click)="getSummary()">Summary</a>
+                </div>
+            </nav>
+            <div class="float-right" style="display: inline-block;">
+                <div class="btn-contract">
+                    <button class="btn btn-primary btn-custom" data-toggle="modal" data-target="#myModal">
+                        <span>Search Text</span>
+                    </button>
+                </div>
+                <div class="modal fade" id="myModal">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <h4 class="modal-title">Search</h4>
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="text" class="form-control ng-pristine ng-valid ng-touched" placeholder="Search text" [(ngModel)]="contract_search">
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-primary btn-custom " (click)="searchContract()">
+                                            <span>Search</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div style="color: red" *ngIf="notHasContract">This contract does not exist</div>
+                                <table style="width:100%; margin-top: 20px; font-size: 15px">
+                                    <tr>
+                                        <th>File Name</th>
+                                    </tr>
+                                    <tr *ngFor="let contract of filecontracts">
+                                        <td>{{contract}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-next">
+                    <button class="btn btn-primary btn-custom" (click)="actionNext()">
+                        <span>Next</span>
+                    </button>
+                </div>
+                <div class="btn-down">
+                    <button class="btn btn-primary btn-custom" (click)="actionDownload()">
+                        <span>Download Input</span>
+                    </button>
+                </div>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+
+        <div class="tab-content" id="nav-tabContent">
+
+            <div class="tab-pane fade show active" id="nav-hc" role="tabpanel" aria-labelledby="nav-hc-tab">
+                <table class="table table-striped table-hover mx-auto" style="margin-top: 20px">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="width: 250px">Nhân sự</th>
+                            <th rowspan="2">Ca vụ</th>
+                            <th colspan="6">Thời gian</th>
+                        </tr>
+                        <tr>
+                            <th>08:00-10:00</th>
+                            <th>10:00-12:00</th>
+                            <th>13:00-15:00</th>
+                            <th>15:00-17:00</th>
+                            <th>17:00-19:00</th>
+                            <th>19:00-21:00</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let log of employees">
+                            <td class="text-left">
+                                <!-- tooltip of employee details -->
+                                <ng-template #tipContent>
+                                    <div class="text-left clear-padding-inside">
+                                        <p><small>Emp ID: {{log.emp_id}}</small></p>
+                                        <p><small>Type: {{EMP_NAME[getIndexEmployee(log)]}}</small></p>
+                                        <p><small>Rank : {{log.emp_rank}}</small></p>
+                                        <p><small>Level: {{log.emp_level}}</small></p>
+                                        <p><small>Avaliable: {{log.emp_available}}</small></p>
+                                        <p><small>Status: {{log.emp_status}}</small></p>
+                                        <p><small>Emp Assigned: {{log.emp_assigned}}</small></p>
+                                    </div>
+                                </ng-template>
+                                <!-- employee -->
+                                <a [routerLink]="['/emp-search', folder, log.emp_id, block.block_id]" target="__blank" class="btn btn-outline-info btn-sm" [ngbTooltip]="tipContent" placement="right" *ngIf="log.emp_id" [ngStyle]="setStyleForEmp(log)">
+                                    {{log.emp_id}}
+                                    <!-- <span class="badge badge-warning" [ngStyle]="{'background-color':log.emp_status == 1 ? 'red' : 'green'}">st</span> -->
+                                    <span class="badge badge-warning" style="margin-left: 2px">
+                                        {{log.emp_assigned}}</span>
+
+                                    <span *ngIf="log.emp_status == 1">
+                                        <i class='fas fa-ban' style='font-size:15px;color:red; margin-left: 5px'
+                                            title="Emp busy"></i>
+                                    </span>
+                                </a>
+                            </td>
+                            <td align="center">
+                                <div *ngIf="log.emp_available" class="request">&nbsp;</div>
+                                <div *ngFor="let task of log.tasks">
+                                    <!-- tooltip of task -->
+                                    <ng-template #tipContentTask>
+                                        <div class="text-left clear-padding-inside">
+                                            <p><small>Request ID: {{task.request_id}}</small></p>
+                                            <p><small>Số lượng NV: {{task.number_of_emp}}</small></p>
+                                            <p><small>Start Time: {{task.start_time}}</small></p>
+                                            <p><small>Checkin Time: {{task.checkin_time}}</small></p>
+                                            <p><small>Checkout Time: {{task.checkout_time}}</small></p>
+                                            <p><small>App Date: {{task.appointmentdate}}</small></p>
+                                            <p><small>App Date2: {{task.appoimentdate2}}</small></p>
+                                            <p><small>Late Time: {{task.late_time}}</small></p>
+                                            <p><small>Task Name: {{TASK_NAME[getIndexTask(task)]}}</small></p>
+                                            <p><small>Reason Outcase: {{task.reason_out_case}}</small></p>
+                                            <p><small>Assigned: {{task.assigned}}</small></p>
+                                            <p><small>Manual: {{task.manual_priority}}</small></p>
+                                            <p><small>Priority: {{task.priority}}</small></p>
+                                            <p><small>Emp_speciallized: {{task.emp_speciallized}}</small></p>
+                                        </div>
+                                    </ng-template>
+                                    <!-- task -->
+                                    <div>
+                                        <div class="request tk-task" [ngbTooltip]="tipContentTask" [ngStyle]="setStyleForTask(log.emp_id, task.type, task.sub_type_1, task.sub_type_2, task.is_history_task)">
+                                            <span style="margin-left: -20px; margin-right: 10px" *ngIf="task.manual_priority == 1">
+                                                <i class='far fa-hand-paper' style='font-size:15px; color:#B0329B'></i>
+                                            </span>
+                                            <a [routerLink]="['/task-search', folder, block.block_id, get_unique_id(task.request_id, task.type)]" target="__blank" style="text-decoration: none; color: black;">{{task.request_id}}</a>
+                                            <!-- <span class="badge badge-pill badge-warning-task"
+                                                *ngIf='isLate(task.late_time)' style="margin-left: 5px">late</span> -->
+                                            <span style="margin-left: 5px;" *ngIf="task.assigned == 1">
+                                                <i class="fab fa-creative-commons-by"
+                                                    style="font-size:15px;color:#B0329B" title="Assigned"></i>
+
+                                            </span>
+                                            <span style="margin-left: 5px;" *ngIf="task.is_history_task == 1">
+                                                <i class="fa fa-check" style='font-size:15px; color:#f0c7'
+                                                    title="Completed task"></i>
+                                            </span>
+                                            <br>
+                                            <span>{{task.contract}}</span>
+                                            <span *ngIf="task.contract == ''">N/A</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </td>
+                            <td colspan="6" class="text-left" style="vertical-align: top; text-align:center">
+                                <!-- common progress bar display timeline -->
+                                <div *ngIf="log.emp_available" class="small progress no-ui">
+                                    <div>07:00</div>
+                                    <div *ngFor="let item of items;" class="progress-bar no-ui" style="width:1%" role="progressbar" aria-valuemin="1" attr.aria-valuenow="{{item}}" aria-valuemax="99">
+                                        <span *ngIf="do_display_text_time(item, get_available_time_segments(log.emp_available)[0])">{{getAvailableTime(log.emp_available)[0]}}</span>
+                                        <span *ngIf="do_display_text_time(item, get_available_time_segments(log.emp_available)[1])">{{getAvailableTime(log.emp_available)[1]}}</span>
+                                        <span *ngIf="do_display_res_time(item, get_current_time_point(res_time), get_available_time_segments(log.emp_available)[0], get_available_time_segments(log.emp_available)[1])" class="text-danger"><i class="fas fa-long-arrow-alt-down"></i></span>
+                                    </div>
+                                    <div>21:00</div>
+                                </div>
+
+                                <div style=" margin: 0px 0px 0px 0px">
+                                    <div class="progress border progress-shadow" *ngIf="isValidAvailableTime(log.emp_available)">
+                                        <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%':getAvailableProgress(log)[0]}">
+                                        </div>
+                                        <div class="progress-bar custom-progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%':getAvailableProgress(log)[1]}"></div>
+                                    </div>
+                                    <div class="progress border progress-shadow" *ngIf="isValidAvailableTime(log.emp_available) == false">
+                                        <div class="progress-bar progress-bar-error" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+                                    </div>
+                                </div>
+
+                                <!-- progress bar of task-->
+                                <div *ngFor="let task of log.tasks">
+                                    <div class="small progress no-ui" style="margin: 20px 0px 0px 15px;">
+                                        <div *ngFor="let item of items;" class="progress-bar no-ui" style="width:1%" role="progressbar" aria-valuemin="0" attr.aria-valuenow="{{item}}" aria-valuemax="100">
+                                            <span *ngIf="do_display_text_time(item, getRedProgress(task.checkin_time, task.checkout_time)[0])">
+                                                {{task.checkin_time | slice:10:16 }}
+                                            </span>
+                                            <span *ngIf="do_display_text_time(item, getRedProgress(task.checkin_time, task.checkout_time)[0] + getRedProgress(task.checkin_time, task.checkout_time)[1])">
+                                                {{task.checkout_time | slice:10:16 }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div style="margin: 0px 0px 0px 0px">
+                                        <div class="progress border custom-progress progress-shadow">
+                                            <div class="progress-bar bg-custom" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[0]}">
+                                            </div>
+                                            <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{'width.%':getRedProgress(task.checkin_time, task.checkout_time)[1]}">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="nav-glpk" role="tabpanel" aria-labelledby="nav-glpk-tab">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <table class="table table-bordered" style="margin-top: 20px;">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <a href="#" title="View all blocks on map" data-toggle="modal" data-target="#allBlockMapModal" (click)="showAllBlocksMap()">
+                                                <span><i style="font-size: 18px;"
+                                                        class="fas fa-globe-americas"></i></span>
+                                            </a>
+                                            &nbsp; Block
+                                        </th>
+                                        <th>
+                                            <div class="row">
+                                                <div class="col-md-5 text-left ml-2">Employee - {{number_of_employee}}
+                                                </div>
+                                                <div class="col-md-4 text-center">Completed Task - {{number_of_tasks}}
+                                                </div>
+                                                <div class="col text-center">Detail</div>
+                                            </div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let obj of emp_by_task_assigned">
+                                        <td>
+                                            <a href="#" data-toggle="modal" data-target="#blockMapModal" (click)="showBlockMap(obj)" [ngClass]="setClassByLoadFactor(obj.load_factor)">
+                                                <span><b>{{obj.block_name}}</b></span>
+                                            </a>
+                                            <a [attr.name]="obj.block_id"></a>
+                                            <br>
+                                            <span [ngClass]="setClassByLoadFactor(obj.load_factor)">NSLĐTB:
+                                                {{obj.capacity}}</span>
+                                            <br>
+                                            <span [ngClass]="setClassByLoadFactor(obj.load_factor)">Load_factor:
+                                                {{obj.load_factor}}</span>
+                                            <br>
+                                            <span [ngClass]="setClassByLoadFactor(obj.load_factor)">Number of Emp:
+                                                {{lengthOfList(obj.employees)}}</span>
+                                        </td>
+                                        <td class="align-middle">
+                                            <div class="row" *ngFor="let emp of obj.employees">
+                                                <div class="col-md-5">
+                                                    <i *ngIf="emp.warning == 1" class="fas fa-exclamation-circle" style="color: red;" title="Resolve task too quick"></i>
+                                                    <i *ngIf="emp.warning == 2" class="fa fa-stopwatch" title="Resolve task too slow" style="color: red;"></i>&nbsp;
+                                                    <a href="#" [ngClass]="setClassByLoadFactor(obj.load_factor)" data-toggle="modal" data-target="#exampleModalCenter" (click)="showMap(obj.block_id, emp.emp_id)">
+                                                        <span>{{emp.emp_id}}</span>
+                                                    </a>
+                                                    <!-- <a style="margin-left: 10px;"
+                                                    [routerLink]="['/emp-search', folder, emp.emp_id]">
+                                                    <a style="margin-left: 10px;"
+                                                        [routerLink]="['/emp-search', folder, emp.emp_id]">
+                                                        <i class="fas fa-info-circle"></i>
+                                                 </a> -->
+                                                </div>
+                                                <div class="col-md-4 text-center" [ngClass]="setClassByLoadFactor(obj.load_factor)">
+                                                    {{emp.emp_assigned}}
+                                                </div>
+                                                <div class="col text-center">
+                                                    <a [routerLink]="['/emp-search', folder, emp.emp_id, obj.block_id]" target="__blank">Show</a>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="col-md-6">
+                            <table class="table table-bordered " style="margin-top: 20px;">
+                                <thead>
+                                    <tr>
+                                        <th>Employee</th>
+                                        <th>Completed Task</th>
+                                        <th>Block</th>
+                                        <th>Emp Type</th>
+                                        <th>Detail</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let astask of topFiveEmps" [ngStyle]="setStyleForTop(astask, topFiveEmps)">
+                                        <td>
+                                            <i *ngIf="astask.warning == 1" class="fas fa-exclamation-circle" style="color: red;" title="Resolve task too quick"></i>
+                                            <i *ngIf="astask.warning == 2" class="fa fa-stopwatch" style="color: red;" Resolve task too slow></i>
+                                            <button type="button" style="border: none; background-color: white" [ngStyle]="setStyleForTop(astask, topFiveEmps)" data-toggle="modal" data-target="#exampleModalCenter" (click)="showMap(astask.block_id, astask.emp_id)">
+                                                <span>{{astask.emp_id}}</span>
+                                            </button>
+                                            <!-- <a style="margin-left: 10px;"
+                                            [routerLink]="['/emp-search', folder, astask.emp_id]">                                        
+                                            <a style="margin-left: 10px;"
+                                                [routerLink]="['/emp-search', folder, astask.emp_id]">
+                                                <i class="fas fa-info-circle"></i>
+                                        </a> -->
+                                        </td>
+                                        <td>{{astask.emp_assigned}}</td>
+                                        <td>
+                                            <a [attr.href]="hrefLink(astask.block_id)" style="text-decoration: none;" [ngStyle]="setStyleForTop(astask, topFiveEmps)">{{astask.block_name}}</a>
+                                        </td>
+                                        <td>{{EMP_NAME[astask.emp_type-1]}}</td>
+                                        <td class="text-center">
+                                            <a [routerLink]="['/emp-search', folder, astask.emp_id, block.block_id]" target="__blank">Show</a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!-- blockMapModal -->
+                            <div class="modal fade" id="blockMapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">Block: {{block1}} - NSLĐTB: {{nsldtb_block}}
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="myBlockMap" style="position:relative;width: 1200px; height: 700px; margin: 0 auto">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog modal-lg modal-dialog-centered" role="dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLongTitle">{{map_emp}} - {{map_block}} - Average Distance: {{average_distance}} km - KPI dung hen: {{on_time_percent}}%
+                                            </h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div id="myMap" style="position:relative;width: 1200px; height: 700px; margin: 0 auto">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- <div *ngIf="isLoadingSumary()" style="text-align: center; font-size: 15px; margin: auto;">Loading...</div> -->
+                        <div class="spinner-border" role="status" *ngIf="isLoadingSumary()" style="margin: auto;">
+                            <span class="sr-only" style="text-align: center; font-size: 15px;">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+                <button (click)="topFunction()" id="topBtn" title="Go to top">Top</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- All block Modal -->
+<div class="modal fade" id="allBlockMapModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">All blocks</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="allBlockMap" style="position:relative;width: 1200px; height: 700px; margin: 0 auto">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

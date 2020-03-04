@@ -1,0 +1,16 @@
+.main-content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.bg-white {
+    background-color: white
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.boder-bottom {
+    border-bottom: 1px dotted #cccccc;
+}

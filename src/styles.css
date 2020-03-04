@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #E4E5E6;
+    font-family: Roboto,Helvetica Neue,sans-serif;
+    font-size: 12px;
+}
+
+.navbar-brand.logo .logo-img {
+    height: 45px;
+    width: 70px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(assets/logo.png) no-repeat 50%;
+    background-size: contain;
+}
+
+.navbar-title {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.navbar-version  {
+    font-size: 10px;
+    color: #ccc;
+}
+
+.jh-navbar  {
+    background-color: #353d47;
+    padding: .2em 1em;
+}
