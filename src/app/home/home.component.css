@@ -1,0 +1,320 @@
+.bg-white {
+    background-color: white
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.clear-padding-inside p {
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-content {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.mg-20 {
+    margin: 20px;
+}
+
+.pd-20 {
+    padding: 20px;
+}
+
+.badge-warning-task {
+    background-color: darkred;
+    color: #FFF;
+}
+
+
+/* CSS for display tabable */
+
+.table {
+    border-top: 0px;
+}
+
+.table thead tr {
+    border: 0px;
+}
+
+.table th {
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    border-collapse: collapse;
+    border-bottom: 1px solid #DEE2E6;
+}
+
+.table td {
+    align-items: center;
+}
+
+
+/* CSS for display tabs */
+
+.nav-tabs {
+    border-bottom: 0px;
+}
+
+.nav-link.active {
+    border: 0px;
+    border-bottom: 2px solid #6D2DB4;
+    background-color: #F2EDF8;
+}
+
+
+/* CSS for display ca vu stype */
+
+.request {
+    text-align: center;
+    margin-top: 11px;
+    padding: 3px;
+    vertical-align: middle;
+    max-width: 140px;
+}
+
+
+/* KienHT */
+
+.bg-custom {
+    background-color: #FAFAFA;
+}
+
+.custom-progress {
+    margin-bottom: 10px;
+}
+
+.progress-shadow {
+    box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;
+    background-color: #FAFAFA;
+}
+
+.no-ui {
+    border: 0px solid;
+    background: none;
+    color: #999999;
+    font-size: xx-small;
+}
+
+.btn-custom {
+    background: #4286CA;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 0px solid #4286CA;
+}
+
+.btn-custom:hover {
+    background: #3473B2
+}
+
+.custom-progress-bar {
+    background-color: #0AB6EE;
+}
+
+.label-text {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.example-full-width {
+    width: 100%;
+}
+
+.nav-name {
+    display: inline-block;
+}
+
+.btn-contract {
+    display: inline-block;
+}
+
+.btn-next {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.btn-down {
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.info-block {
+    font-size: 20px;
+    color: red;
+    margin: auto;
+    font-weight: bold;
+}
+
+.modal-lg {
+    max-width: 1300px;
+}
+
+.test {
+    background: #7F7F7F;
+    background: #004000;
+    background: #FF7F27;
+    background: #000080;
+    background: #7092BE;
+    background: #00A2E8;
+    background: #3F48CC;
+    background: #A349A4;
+    background: #B97A57;
+    background: #036E0E;
+    background: #FFAEC9;
+    background: #FFC90E;
+    background: #0A56D1;
+    background: #1150B5;
+    background: #16499A;
+    background: #17448C;
+    background: #103777;
+    background: #092F6D;
+    background: #04265D;
+    background: #163361;
+    background: #FD0585;
+    background: #EB077D;
+    background: #D60571;
+    background: #C1156E;
+    background: #B00E61;
+    background: #920D51;
+    background: #840848;
+    background: #6F073D;
+    background: #711344;
+    background: #630133;
+}
+
+#topBtn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+/* The actual popup (appears on top) */
+
+.popup .popuptext {
+    visibility: hidden;
+    width: 180px;
+    background-color: #555;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    /* bottom: 125%; */
+    left: 50%;
+    margin-left: -165px;
+}
+
+
+/* Popup arrow */
+
+.popup .popuptext::after {
+    content: "";
+    position: absolute;
+    /* bottom: 100%; */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+
+/* Add animation (fade in the popup) */
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.text-info {
+    margin-left: 5px;
+    color: #fff;
+    text-align: left;
+}
+
+.progress-bar-error {
+    background: rgb(255, 0, 0);
+    -webkit-animation-name: pulse;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-duration: 2s;
+    /* Chrome, Safari, Opera */
+    -webkit-animation-iteration-count: infinite;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        background: rgb(255, 0, 0);
+    }
+    50% {
+        background: rgb(252, 252, 252);
+    }
+    100% {
+        background: rgb(255, 0, 0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        background: rgb(255, 0, 0);
+    }
+    50% {
+        background: rgb(250, 250, 250);
+    }
+    100% {
+        background: rgb(255, 0, 0);
+    }
+}
